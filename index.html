@@ -3,83 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Promposal 💌</title>
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <title>Prom Proposal</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="hearts" id="hearts"></div>
-
-    <div class="proposal">
-        <h1>Alex's Big Question 💖</h1>
-        
-        <div class="photo-gallery">
-            <img src="assets/images/photo1.jpg" class="photo" alt="Our Memory">
-            <img src="assets/images/photo2.jpg" class="photo" alt="Our Memory">
-            <img src="assets/images/photo3.jpg" class="photo" alt="Our Memory">
+    <div class="container" id="landing">
+        <div class="question">Hi my Jyoti, only click go if you promise to stay grounded</div>
+        <div class="options">
+            <button onclick="startQuestions()">Go</button>
         </div>
-
-        <h1>Will You Go to Prom With Me, Jamie? 🌸</h1>
-        
-        <div class="buttons">
-            <button id="yesBtn">YES! 😍</button>
-            <button id="noBtn">Hmm... 😅</button>
-        </div>
-
-        <div id="responseMessage" style="display: none;">
-            <h2>YAY! 💃🕺<br>Can't wait to dance with you! 💫<br> 
-                <span id="countdown"></span></h2>
+    </div>
+    
+    <div class="container" id="quiz" style="display: none;">
+        <div class="question" id="question">Are you ready for some fun questions?</div>
+        <div class="options" id="options">
+            <button onclick="nextQuestion()">Yes</button>
         </div>
     </div>
 
-    <script>
-        // Create floating hearts
-        function createHearts() {
-            const heartsContainer = document.getElementById('hearts');
-            for (let i = 0; i < 50; i++) {
-                const heart = document.createElement('div');
-                heart.className = 'heart';
-                heart.innerHTML = '❤';
-                heart.style.left = Math.random() * 100 + 'vw';
-                heart.style.animationDelay = Math.random() * 2 + 's';
-                heartsContainer.appendChild(heart);
-            }
-        }
-        createHearts();
-
-        // Yes button handler
-        document.getElementById('yesBtn').addEventListener('click', () => {
-            document.getElementById('responseMessage').style.display = 'block';
-            document.querySelector('.buttons').style.display = 'none';
-            
-            // Confetti effect
-            for(let i = 0; i < 100; i++) {
-                const confetti = document.createElement('div');
-                confetti.className = 'confetti';
-                confetti.style.left = Math.random() * 100 + 'vw';
-                confetti.style.animation = `fall ${Math.random() * 3 + 2}s linear`;
-                document.body.appendChild(confetti);
-            }
-        });
-
-        // No button animation
-        const noBtn = document.getElementById('noBtn');
-        noBtn.addEventListener('mouseover', () => {
-            noBtn.style.transform = `translate(${Math.random() * 100 - 50}px, ${Math.random() * 100 - 50}px)`;
-        });
-
-        // Countdown timer
-        const promDate = new Date('2024-04-20').getTime();
-        setInterval(() => {
-            const now = new Date().getTime();
-            const diff = promDate - now;
-            
-            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            
-            document.getElementById('countdown').innerHTML = 
-                `${days} days and ${hours} hours to go! ⏳`;
-        }, 1000);
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
