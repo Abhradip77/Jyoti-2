@@ -1,3 +1,5 @@
+/* style.css */
+
 body {
     font-family: Arial, sans-serif;
     text-align: center;
@@ -18,35 +20,33 @@ body {
 }
 
 #image-container img {
-    max-width: 40%; /* Adjust the size to fit proportionally */
-    height: auto;
-    display: block;
-    margin: 0 auto; /* Centering */
+    width: 250px; /* Adjust width as needed */
+    height: auto; /* Maintain aspect ratio */
 }
 
 #question {
     font-family: 'Sacramento', cursive;
-    font-size: 42px;
-    margin-top: 10px;
+    font-size: 36px;
+    margin-top: 20px;
 }
 
 #options {
-    margin-top: 15px;
+    margin-top: 20px;
+    display: flex;
+    gap: 20px;
 }
 
 button {
     padding: 10px 20px;
-    margin: 0 10px;
-    font-size: 24px;
+    font-size: 20px;
     font-family: 'Sacramento', cursive;
     background-color: #FB607F;
     color: white;
     border: none;
     cursor: pointer;
-    border-radius: 8px;
-    transition: transform 0.2s ease;
+    border-radius: 10px;
 }
 
 button:hover {
-    transform: scale(1.1);
+    background-color: #ff4f6d;
 }
