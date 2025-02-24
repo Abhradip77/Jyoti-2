@@ -1,40 +1,77 @@
-/* style.css */
-
+/* General Styles */
 body {
-    font-family: Arial, sans-serif; /* Fallback font family */
-    text-align: center; /* Center-align text */
-    margin: 0; /* Remove default margin */
-    background-color: #FADADD; /* Set background color to light pink */
+    font-family: 'Sacramento', cursive, Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    background-color: #FADADD; /* Soft baby pink */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Main Container */
+#container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    max-width: 700px;
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Image Styling */
+#image-container img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Question Styling */
+#question {
+    font-size: 60px;
+    color: #D63384; /* Darker pink for contrast */
+    margin-bottom: 20px;
+}
+
+/* Options Styling */
+#options {
+    margin-top: 20px;
+}
+
+/* Button Styling */
+button {
+    padding: 15px 30px;
+    margin: 10px;
+    font-size: 32px;
+    font-family: 'Sacramento', cursive, Arial, sans-serif;
+    background-color: #FB607F; /* Romantic pink */
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 15px;
+    transition: transform 0.2s, background-color 0.3s;
+}
+
+/* Hover Effect */
+button:hover {
+    transform: scale(1.1);
+    background-color: #E75480;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 #container {
-    display: flex; /* Use flexbox layout */
-    flex-direction: column; /* Stack elements vertically */
-    align-items: center; /* Center-align items horizontally */
-    justify-content: center; /* Center-align items vertically */
-    height: 100vh; /* Make the container full viewport height */
-}
-
-#image-container {
-    /* This container will hold the images */
-}
-
-#question {
-    font-family: 'Sacramento', cursive; /* Apply Sacramento font to the question */
-    font-size: 52px; /* Set font size for the question */
-}
-
-#options {
-    margin-top: 20px; /* Add space above the options */
-}
-
-button {
-    padding: 10px 20px; /* Set padding for buttons */
-    margin: 0 10px; /* Set margin around buttons */
-    font-size: 26px; /* Set font size for buttons */
-    font-family: 'Sacramento', cursive; /* Apply Sacramento font to the options */
-    background-color: #FB607F; /* Set button background color */
-    color: white; /* Set text color to white */
-    border: none; /* Remove button border */
-    cursor: pointer; /* Set cursor to pointer on hover */
+    animation: fadeIn 1.5s ease-in-out;
 }
