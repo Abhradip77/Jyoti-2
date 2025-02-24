@@ -1,52 +1,54 @@
-/* style.css */
-
+/* Set background color */
 body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    margin: 0;
-    background-color: #FADADD;
+    background: linear-gradient(to bottom, #fce4ec, #f8bbd0); /* Soft pink gradient */
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    margin: 0;
+    font-family: 'Sacramento', cursive;
 }
 
+/* Center all content */
 #container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
+    text-align: center;
 }
 
+/* Style the image */
 #image-container img {
-    width: 250px; /* Adjust width as needed */
-    height: auto; /* Maintain aspect ratio */
+    width: 250px; /* Adjust size */
+    height: auto;
+    border-radius: 15px; /* Rounded corners for aesthetics */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
 
+/* Styling for the question text */
 #question {
-    font-family: 'Sacramento', cursive;
-    font-size: 36px;
-    margin-top: 20px;
+    font-size: 32px;
+    margin: 20px 0;
+    color: #5a4a42;
 }
 
-#options {
-    margin-top: 20px;
-    display: flex;
-    gap: 20px;
-}
-
+/* Button styling */
 button {
-    padding: 10px 20px;
-    font-size: 20px;
-    font-family: 'Sacramento', cursive;
-    background-color: #FB607F;
+    background-color: #e57373;
     color: white;
+    font-size: 20px;
+    padding: 10px 20px;
+    margin: 10px;
     border: none;
-    cursor: pointer;
     border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
 }
 
 button:hover {
-    background-color: #ff4f6d;
+    background-color: #d32f2f;
+}
+
+/* Countdown Timer */
+#countdown {
+    font-size: 22px;
+    margin-top: 20px;
+    color: #5a4a42;
 }
