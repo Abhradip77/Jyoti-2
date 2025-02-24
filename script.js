@@ -1,5 +1,3 @@
-// script.js
-
 // Function to handle button click events
 function selectOption(option) {
     if (option === 'yes') {
@@ -13,12 +11,10 @@ function selectOption(option) {
         var currentFontSize = window.getComputedStyle(yesButton).getPropertyValue('font-size');
         var newSize = parseFloat(currentFontSize) * 2;
         yesButton.style.fontSize = newSize + 'px';
-    } else {
-        alert('Invalid option!');
     }
 }
 
-// Function to flash rainbow colors
+// Flash rainbow colors effect
 function flashRainbowColors(callback) {
     var colors = ['#ff0000', '#ff7f00', '#ffff00', '#00ff00', '#0000ff', '#4b0082', '#9400d3'];
     var i = 0;
@@ -35,7 +31,7 @@ function flashRainbowColors(callback) {
     }, 2000);
 }
 
-// Function to display the cat.gif initially
+// Display the cat.gif initially
 function displayCat() {
     var imageContainer = document.getElementById('image-container');
     var catImage = new Image();
@@ -46,7 +42,7 @@ function displayCat() {
     };
 }
 
-// Function to display the cat-heart.gif
+// Display the cat-heart.gif
 function displayCatHeart() {
     document.getElementById('image-container').innerHTML = '';
     var imageContainer = document.getElementById('image-container');
@@ -59,29 +55,25 @@ function displayCatHeart() {
     };
 }
 
-// Countdown Timer Function
-function startCountdown() {
-    var countdownElement = document.getElementById('countdown');
-    var targetDate = new Date('February 28, 2025 15:30:00').getTime();
-
-    var countdownInterval = setInterval(function() {
+// Countdown Timer
+function updateCountdown() {
+    var countdownElement = document.getElementById("countdown");
+    var eventDate = new Date("February 28, 2025 15:30:00").getTime();
+    var interval = setInterval(function() {
         var now = new Date().getTime();
-        var timeLeft = targetDate - now;
+        var timeLeft = eventDate - now;
 
         if (timeLeft <= 0) {
-            clearInterval(countdownInterval);
+            clearInterval(interval);
             countdownElement.innerHTML = "It's time! 💖";
         } else {
             var days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
             var hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
             var minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
             var seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
-
             countdownElement.innerHTML = `Time left: ${days}d ${hours}h ${minutes}m ${seconds}s`;
         }
     }, 1000);
 }
 
-// Start functions when the page loads
-displayCat();
-startCountdown();
+updateCountdown();
