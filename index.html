@@ -15,9 +15,19 @@
     </div>
     
     <div class="container" id="quiz" style="display: none;">
+        <img src="our-pic.jpg" alt="Us" class="couple-img">
         <div class="question" id="question">Are you ready for some fun questions?</div>
-        <div class="options" id="options">
-            <button onclick="nextQuestion()">Yes</button>
+        <input type="text" id="answer" class="answer-input" placeholder="Type your answer here...">
+        <div class="options">
+            <button onclick="nextQuestion()">Submit</button>
+        </div>
+    </div>
+
+    <div id="celebration" style="display: none;">
+        <div class="full-screen">
+            <h1>Can't wait! 💖</h1>
+            <div id="countdown"></div>
+            <div class="hearts"></div>
         </div>
     </div>
 
