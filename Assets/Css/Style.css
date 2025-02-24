@@ -1,53 +1,52 @@
-// Function to handle button click events
-function selectOption(option) {
-    if (option === 'yes') {
-        // Flash rainbow colors
-        flashRainbowColors(function () {
-            document.getElementById('question').style.display = 'none'; // Hide the question
-            displayOurPic(); // Display the "our-pic.jpg" image
-        });
-    } else if (option === 'no') {
-        document.getElementById('no-button').innerText = 'You sure?';
-        var yesButton = document.getElementById('yes-button');
-        var currentFontSize = window.getComputedStyle(yesButton).getPropertyValue('font-size');
-        var newSize = parseFloat(currentFontSize) * 2; // Increase font size
-        yesButton.style.fontSize = newSize + 'px';
-    }
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    background-color: #FADADD;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
-// Function to flash rainbow colors
-function flashRainbowColors(callback) {
-    var colors = ['#ff0000', '#ff7f00', '#ffff00', '#00ff00', '#0000ff', '#4b0082', '#9400d3'];
-    var i = 0;
-    var interval = setInterval(function () {
-        document.body.style.backgroundColor = colors[i];
-        i = (i + 1) % colors.length;
-    }, 200);
-
-    setTimeout(function () {
-        clearInterval(interval);
-        document.body.style.backgroundColor = ''; // Reset background color
-        if (callback) {
-            callback();
-        }
-    }, 2000);
+#container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
 }
 
-// Function to display our-pic.jpg
-function displayOurPic() {
-    document.getElementById('image-container').innerHTML = ''; // Clear existing content
-    var imageContainer = document.getElementById('image-container');
-    var ourPic = new Image();
-    ourPic.src = 'our-pic.jpg'; // Reference the image in the root folder
-    ourPic.alt = 'Our Picture';
-    ourPic.style.width = '50%'; // Adjust size
-    ourPic.style.borderRadius = '20px'; // Add rounded corners
-
-    ourPic.onload = function () {
-        imageContainer.appendChild(ourPic);
-        document.getElementById('options').style.display = 'none';
-    };
+#image-container img {
+    max-width: 40%; /* Adjust the size to fit proportionally */
+    height: auto;
+    display: block;
+    margin: 0 auto; /* Centering */
 }
 
-// Display the default image initially
-displayOurPic();
+#question {
+    font-family: 'Sacramento', cursive;
+    font-size: 42px;
+    margin-top: 10px;
+}
+
+#options {
+    margin-top: 15px;
+}
+
+button {
+    padding: 10px 20px;
+    margin: 0 10px;
+    font-size: 24px;
+    font-family: 'Sacramento', cursive;
+    background-color: #FB607F;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: transform 0.2s ease;
+}
+
+button:hover {
+    transform: scale(1.1);
+}
